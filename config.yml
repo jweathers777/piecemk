@@ -1,0 +1,21 @@
+---
+:games:
+  - shogi
+  - chushogi
+
+:colors:
+  :background: white
+  :border: black
+  :koma: rgb(229,194,117)
+  :kanji: black
+  :promoted_kanji: rgb(198,33,57)
+
+:dimensions:
+  :dpi: 72.0
+  :square:
+    :width: 2.55
+    :height: 3.0
+    :units: cm
+  :grid:
+    :width: 0.1
+    :units: cm
