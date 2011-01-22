@@ -1,0 +1,111 @@
+--- 
+:name: Shogi
+:dimensions: 
+- 9
+- 9
+:pieces: 
+- :english: king
+  :japanese: ōshō
+  :translated: king general
+  :kanji: 王將
+  :promotion: 
+  :is_promoted: false
+  :size: 6
+- :english: jewel
+  :japanese: gyokushō
+  :translated: jeweled general
+  :kanji: 玉將
+  :promotion: 
+  :is_promoted: false
+  :size: 6
+- :english: rook
+  :japanese: hisha
+  :translated: flying chariot
+  :kanji: 飛車
+  :promotion: dragon king 
+  :is_promoted: false
+  :size: 5
+- :english: dragon king
+  :japanese: ryūō
+  :translated: dragon king
+  :kanji: 龍王
+  :promotion: 
+  :is_promoted: true
+  :size: 5
+- :english: bishop
+  :japanese: kakugyō
+  :translated: angle mover
+  :kanji: 角行
+  :promotion: dragon horse 
+  :is_promoted: false
+  :size: 5
+- :english: dragon horse
+  :japanese: ryūma
+  :translated: dragon horse
+  :kanji: 龍馬
+  :promotion: 
+  :is_promoted: true
+  :size: 5
+- :english: gold general
+  :japanese: kinshō
+  :translated: gold general
+  :kanji: 金将
+  :promotion: 
+  :is_promoted: false
+  :size: 4
+- :english: silver general
+  :japanese: ginshō
+  :translated: silver general
+  :kanji: 銀将
+  :promotion: promoted silver 
+  :is_promoted: false
+  :size: 4
+- :english: promoted silver
+  :japanese: narigin
+  :translated: promoted silver
+  :kanji: 成銀
+  :promotion: 
+  :is_promoted: true
+  :size: 4
+- :english: knight
+  :japanese: keima
+  :translated: cassia horse
+  :kanji: 桂馬
+  :promotion: promoted knight 
+  :is_promoted: false
+  :size: 3
+- :english: promoted knight
+  :japanese: narikei
+  :translated: promoted cassia
+  :kanji: 成桂
+  :promotion: 
+  :is_promoted: true
+  :size: 3
+- :english: lance
+  :japanese: kyōsha
+  :translated: incense chariot
+  :kanji: 香車
+  :promotion: promoted lance 
+  :is_promoted: false
+  :size: 2
+- :english: promoted lance
+  :japanese: narikyō
+  :translated: promoted incense
+  :kanji: 成香
+  :promotion: 
+  :is_promoted: true
+  :size: 2
+- :english: pawn
+  :japanese: fuhyō
+  :translated: foot soldier
+  :kanji: 歩兵
+  :promotion: tokin
+  :is_promoted: false
+  :size: 1
+- :english: tokin
+  :japanese: tokin
+  :translated: reaches gold
+  :kanji: 成金
+  :promotion: 
+  :is_promoted: true
+  :size: 1
