@@ -3,6 +3,15 @@
 :dimensions:
 - 12
 - 12
+:zone-markers:
+- - 5 
+  - 5
+- - 9 
+  - 5
+- - 5 
+  - 9
+- - 9 
+  - 9
 :pieces:
 - :english: king
   :japanese: ōshō

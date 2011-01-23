@@ -93,6 +93,21 @@ module PieceMaker
         gc.line(x, y0, x, yN) 
       end
 
+      if @description[:'zone-markers']
+        offset = @description[:dimensions][1] + 1
+        @description[:'zone-markers'].each do |marker|
+          marker[0] = marker[0] - 1
+          marker[1] = offset - marker[1]
+          x = x0 + marker[0]*x_delta 
+          y = y0 + marker[1]*y_delta
+          radius = @@config.grid_width*3
+          
+          gc.fill_opacity(1)
+          gc.fill(@@config.colors[:border])
+          gc.circle(x,y,x-radius,y)
+        end
+      end
+
       gc.draw(image)
       image.write(File.join(@name, "board.png"))
     end
