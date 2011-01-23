@@ -2,9 +2,10 @@
 :games:
   - shogi
   - chushogi
-
+:font: '/System/Library/Fonts/儷黑 Pro.ttf'
+:tile: 'wood.jpg'
 :colors:
-  :background: white
+  :background: none
   :border: black
   :koma: rgb(229,194,117)
   :kanji: black
@@ -18,4 +19,10 @@
     :units: cm
   :grid:
     :width: 0.1
+    :units: cm
+  :end_border:
+    :width: 1.0
+    :units: cm
+  :side_border:
+    :width: 0.9
     :units: cm

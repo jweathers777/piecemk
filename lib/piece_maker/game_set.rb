@@ -5,17 +5,17 @@ include Magick
 
 module PieceMaker
   class GameSet
+    @@config = Configuration.instance
+    
     @@kanji_gc = Draw.new {
-      self.encoding = 'Unice'
       self.encoding = 'Unicode'
-      self.font = '/System/Library/Fonts/儷黑 Pro.ttf'
+      self.font = @@config.font
       self.gravity = CenterGravity
     }
 
     def initialize(name)
       @name = name
       @description = YAML.load_file("#{name}.yml")
-      @config = Configuration.instance
       
       symbols = @description[:setup].join(',').split(',').
         uniq.map {|e| e.strip}.reject {|e| e == ''}
@@ -30,16 +30,18 @@ module PieceMaker
     end
 
     def render_piece(piece, size, kanji_color, file_name)
-      image = Image.new(@config.square_width, @config.square_height)
-      image.background_color = @config.colors[:background]
+      bg = @@config.colors[:background]
+      image = Image.new(@@config.square_width, @@config.square_height) {
+        self.background_color = bg
+      }
 
-      koma = Koma.new(size, @config.square_width, @config.square_height)
+      koma = Koma.new(size, @@config.square_width, @@config.square_height)
       draw_koma(image, koma)
       
       kanji = piece[:kanji].split(//).join("\n")
       draw_kanji(image, koma, kanji, kanji_color)
 
-      image.write(File.join(@name, "#{file_name}.png"))
+      image.write("png32:"+File.join(@name, "#{file_name}.png"))
     end
 
     def render_pieces
@@ -47,12 +49,52 @@ module PieceMaker
       
       @pieces.each do |p|
         piece = @piece_information[p]
-        render_piece(piece, piece[:size], @config.colors[:kanji], piece[:english])
+        render_piece(piece, piece[:size], @@config.colors[:kanji], piece[:english])
         if piece[:promotion]
           promoted_piece = @piece_information[piece[:promotion]]
-          render_piece(promoted_piece, piece[:size], @config.colors[:promoted_kanji], "promoted #{piece[:english]}")
+          render_piece(promoted_piece, piece[:size], @@config.colors[:promoted_kanji], "promoted #{piece[:english]}")
         end
       end
+    end
+
+    def render_board
+      tile = Image.read(@@config.tile).first
+      width = @description[:dimensions][0] * @@config.square_width +
+        (@description[:dimensions][0]+1) * @@config.grid_width + 
+        2*@@config.side_border_width
+      height = @description[:dimensions][1] * @@config.square_height +
+        (@description[:dimensions][1]+1) * @@config.grid_width + 
+        2*@@config.end_border_width
+
+      image = Image.new(width, height)
+      image.composite_tiled!(tile, ReplaceCompositeOp)
+
+      gc = Draw.new
+      gc.fill_opacity(0)
+      gc.stroke(@@config.colors[:border])
+      gc.stroke_width(2)
+
+      x0 = @@config.side_border_width
+      y0 = @@config.end_border_width
+
+      xN = width - @@config.side_border_width - 2
+      yN = height - @@config.end_border_width - 2
+
+      x_delta = @@config.square_width + @@config.grid_width
+      y_delta = @@config.square_height + @@config.grid_width
+
+      (@description[:dimensions][1] + 1).times do |row|
+        y = y0 + row*y_delta
+        gc.line(x0, y, xN, y) 
+      end
+      
+      (@description[:dimensions][0] + 1).times do |col|
+        x = x0 + col*x_delta
+        gc.line(x, y0, x, yN) 
+      end
+
+      gc.draw(image)
+      image.write(File.join(@name, "board.png"))
     end
 
     private
@@ -60,9 +102,9 @@ module PieceMaker
     def draw_koma(image, koma)
       gc = Draw.new
       gc.fill_opacity(0)
-      gc.stroke(@config.colors[:border])
+      gc.stroke(@@config.colors[:border])
       gc.stroke_width(2)
-      gc.fill(@config.colors[:koma])
+      gc.fill(@@config.colors[:koma])
       gc.polygon(*(koma.vertices))
       gc.draw(image)
     end

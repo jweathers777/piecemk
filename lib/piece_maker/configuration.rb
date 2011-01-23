@@ -16,18 +16,25 @@ module PieceMaker
       @config[:colors]
     end
 
-    def square_width
-      @square_width ||= convert_to_pixels(
-        @config[:dimensions][:square][:width],
-        @config[:dimensions][:square][:units]
-      )
+    def font
+      @config[:font]
     end
-    
-    def square_height
-      @square_height ||= convert_to_pixels(
-        @config[:dimensions][:square][:height],
-        @config[:dimensions][:square][:units]
-      )
+
+    def tile
+      @tile ||= File.expand_path(@config[:tile])
+    end
+
+    %w{square:width square:height grid:width end_border:width side_border:width}.each do |pair|
+      label, dimension = pair.split(':')
+      name = "#{label}_#{dimension}"
+      eval """
+      define_method name do
+        @#{name} ||= convert_to_pixels(
+          @config[:dimensions][:#{label}][:#{dimension}],
+          @config[:dimensions][:#{label}][:units]
+        )
+      end
+      """
     end
 
     private
