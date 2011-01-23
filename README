@@ -1,0 +1,8 @@
+PieceMaker is a small utility and library that I wrote for generating decent
+looking graphical Shogi variant pieces and boards. It is descended from
+an earlier implementation written in C++ and wxWidgets back in 2004.
+
+GitHub:
+
+http://github.com/jweathers/piecemk
+
