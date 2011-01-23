@@ -133,6 +133,7 @@ module PieceMaker
         searching = (m.width > koma.inner_width or m.height > koma.inner_height)
         pointsize -= 1 if searching
       end
+      @@kanji_gc.pointsize = pointsize - 2
 
       @@kanji_gc.annotate(image, 0, 0, 0, 0, kanji) {
         self.fill = color
