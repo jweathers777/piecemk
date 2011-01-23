@@ -2,7 +2,20 @@ PieceMaker is a small utility and library that I wrote for generating decent
 looking graphical Shogi variant pieces and boards. It is descended from
 an earlier implementation that I wrote in C++ and wxWidgets back in 2004.
 
+Requirements:
+   ruby 1.9
+   rmagick (Tested with 2.13.1)
+
 GitHub:
+   http://github.com/jweathers/piecemk
 
-http://github.com/jweathers/piecemk
+Usage:
+   The program piecemk.rb uses the library to generate boards and pieces
+   for shogi variants as configured in config.yml. This file references
+   individual YAML files that describe the games for which the board and
+   pieces are to be generated.
 
+   The formats for config.yml and the YAML files for shogi and chushogi
+   should be fairly self-explanatory and illustrate all current possibilites.
+
+   
