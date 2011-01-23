@@ -6,218 +6,200 @@
 :pieces:
 - :english: king
   :japanese: ōshō
-  :translated: king general
   :kanji: 王将
+  :notation: K
   :promotion:
-  :is_promoted: false
   :size: 6
 - :english: jewel
   :japanese: gyokushō
-  :translated: jeweled general
   :kanji: 玉将
+  :notation: K
   :promotion:
-  :is_promoted: false
   :size: 6
 - :english: drunk elephant
   :japanese: suizō
-  :translated: drunk elephant
   :kanji: 酔象
+  :notation: DE
   :promotion: crown prince
-  :is_promoted: false
   :size: 4
 - :english: crown prince
   :japanese: taishi
-  :translated: crown prince
   :kanji: 太子
+  :notation: +DE
   :promotion: 
-  :is_promoted: true
   :size: 4
 - :english: gold general
   :japanese: kinshō
-  :translated: gold general
   :kanji: 金将
+  :notation: G
   :promotion: rook
-  :is_promoted: false
   :size: 4
 - :english: silver general
   :japanese: ginshō
-  :translated: silver general
   :kanji: 銀将
+  :notation: S
   :promotion: vertical mover
-  :is_promoted: false
   :size: 4
 - :english: copper general
   :japanese: dōshō
-  :translated: copper general
   :kanji: 銅将
+  :notation: C
   :promotion: side mover
-  :is_promoted: false
   :size: 4
 - :english: ferocious leopard
   :japanese: mōhyō
-  :translated: ferocious leopard
   :kanji: 猛豹
+  :notation: FL
   :promotion: bishop
-  :is_promoted: false
   :size: 3
 - :english: lance
   :japanese: kyōsha
-  :translated: lance
   :kanji: 香車
+  :notation: L
   :promotion: white horse
-  :is_promoted: false
   :size: 2
 - :english: white horse
   :japanese: hakku
-  :translated: white horse
   :kanji: 白駒
+  :notation: +L
   :promotion: 
-  :is_promoted: red
   :size: 2
 - :english: kirin
   :japanese: kirin
-  :translated: kirin
   :kanji: 麒麟
+  :notation: Kr
   :promotion: lion
-  :is_promoted: false
   :size: 5
 - :english: phoenix
   :japanese: hōō
-  :translated: phoenix
   :kanji: 鳳凰
+  :notation: Ph
   :promotion: free king
-  :is_promoted: false
   :size: 5
 - :english: blind tiger
   :japanese: mōko
-  :translated: blind tiger
   :kanji: 盲虎
+  :notation: BT
   :promotion: flying stag
-  :is_promoted: false
   :size: 3
 - :english: flying stag
   :japanese: hiroku
-  :translated: flying stag
   :kanji: 飛鹿
+  :notation: +BT
   :promotion: 
-  :is_promoted: true
   :size: 3
 - :english: bishop
   :japanese: kakugyō
-  :translated: bishop
   :kanji: 角行
+  :notation: B
   :promotion: dragon horse
-  :is_promoted: false
   :size: 5
 - :english: reverse chariot
   :japanese: hensha
-  :translated: reverse chariot
   :kanji: 反車
+  :notation: RC
   :promotion: whale
-  :is_promoted: false
   :size: 2
 - :english: whale
   :japanese: keigei
-  :translated: whale
   :kanji: 鯨鯢
+  :notation: +RC
   :promotion: 
-  :is_promoted: true
   :size: 2
 - :english: lion
   :japanese: shishi
-  :translated: lion
   :kanji: 獅子
+  :notation: Ln
   :promotion:
-  :is_promoted: false
   :size: 4
 - :english: free king
   :japanese: honnō
-  :translated: free king
   :kanji: 奔王
+  :notation: FK
   :promotion:
-  :is_promoted: false
   :size: 4
 - :english: dragon horse
   :japanese: ryūma
-  :translated: dragon horse
   :kanji: 龍馬
+  :notation: DH
   :promotion: horned falcon
-  :is_promoted: false
   :size: 5
 - :english: horned falcon
   :japanese: kakuō
-  :translated: horned falcon
   :kanji: 角鷹
+  :notation: +DH
   :promotion: 
-  :is_promoted: true
   :size: 5
 - :english: dragon king
   :japanese: ryūō
-  :translated: dragon king
   :kanji: 龍王
+  :notation: DK
   :promotion: soaring eagle
-  :is_promoted: false
   :size: 5
 - :english: soaring eagle
   :japanese: hijū
-  :translated: soaring eagle
   :kanji: 飛鷲
+  :notation: +DK
   :promotion: 
-  :is_promoted: true
   :size: 5
 - :english: rook
   :japanese: hisha
-  :translated: rook
   :kanji: 飛車
+  :notation: R
   :promotion: dragon king
-  :is_promoted: false
   :size: 5
 - :english: vertical mover
   :japanese: shugyō
-  :translated: vertical mover
   :kanji: 竪行
+  :notation: VM
   :promotion: flying ox
-  :is_promoted: false
   :size: 2
 - :english: flying ox
   :japanese: higyū
-  :translated: flying ox
   :kanji: 飛牛
+  :notation: +VM
   :promotion: 
-  :is_promoted: true
   :size: 2
 - :english: side mover
   :japanese: ōgyō
-  :translated: side mover
   :kanji: 横行
+  :notation: SM
   :promotion: free boar
-  :is_promoted: false
   :size: 2
 - :english: free boar
   :japanese: honcho
-  :translated: free boar
   :kanji: 奔猪
+  :notation: +SM
   :promotion: 
-  :is_promoted: true
   :size: 2
 - :english: pawn
   :japanese: fuhyō
-  :translated: pawn
   :kanji: 歩兵
+  :notation: P
   :promotion: tokin
-  :is_promoted: false
   :size: 1
 - :english: tokin
   :japanese: tokin
-  :translated: tokin
   :kanji: と金
+  :notation: +P
   :promotion: 
-  :is_promoted: true
   :size: 1
 - :english: go-between
   :japanese: chūnin
-  :translated: go-between
   :kanji: 仲人
+  :notation: GB
   :promotion: drunk elephant
-  :is_promoted: false
   :size: 1
+:setup:
+   - " L,FL, C, S, G,DE, K, G, S, C,FL, L"
+   - "RC,  , B,  ,BT,Ph,Kr,BT,  , B,  ,RC"
+   - "SM,VM, R,DH,DK,FK,Ln,DK,DH, R,VM,SM"
+   - " P, P, P, P, P, P, P, P, P, P, P, P"
+   - "  ,  ,  ,GB,  ,  ,  ,  ,GB,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,GB,  ,  ,  ,  ,GB,  ,  ,  "
+   - " P, P, P, P, P, P, P, P, P, P, P, P"
+   - "SM,VM, R,DH,DK,Ln,FK,DK,DH, R,VM,SM"
+   - "RC,  , B,  ,BT,Kr,Ph,BT,  , B,  ,RC"
+   - " L,FL, C, S, G, K,DE, G, S, C,FL, L"

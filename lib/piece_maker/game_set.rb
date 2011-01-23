@@ -16,23 +16,42 @@ module PieceMaker
       @name = name
       @description = YAML.load_file("#{name}.yml")
       @config = Configuration.instance
+      
+      symbols = @description[:setup].join(',').split(',').
+        uniq.map {|e| e.strip}.reject {|e| e == ''}
+      @pieces = []
+      @piece_information = {}
+      @description[:pieces].each do |p|
+        if symbols.include?(p[:notation])
+          @pieces << p[:english]
+        end
+        @piece_information[p[:english]] = p
+      end
+    end
+
+    def render_piece(piece, size, kanji_color, file_name)
+      image = Image.new(@config.square_width, @config.square_height)
+      image.background_color = @config.colors[:background]
+
+      koma = Koma.new(size, @config.square_width, @config.square_height)
+      draw_koma(image, koma)
+      
+      kanji = piece[:kanji].split(//).join("\n")
+      draw_kanji(image, koma, kanji, kanji_color)
+
+      image.write(File.join(@name, "#{file_name}.png"))
     end
 
     def render_pieces
       Dir.mkdir(@name) unless Dir.exists?(@name)
       
-      @description[:pieces].each do |piece|
-        image = Image.new(@config.square_width, @config.square_height)
-        image.background_color = @config.colors[:background]
-
-        koma = Koma.new(piece[:size], @config.square_width, @config.square_height)
-        draw_koma(image, koma)
-        
-        kanji = piece[:kanji].split(//).join("\n")
-        kanji_color = piece[:is_promoted] ? @config.colors[:promoted_kanji] : @config.colors[:kanji]
-        draw_kanji(image, koma, kanji, kanji_color)
-
-        image.write(File.join(@name, "#{piece[:english]}.png"))
+      @pieces.each do |p|
+        piece = @piece_information[p]
+        render_piece(piece, piece[:size], @config.colors[:kanji], piece[:english])
+        if piece[:promotion]
+          promoted_piece = @piece_information[piece[:promotion]]
+          render_piece(promoted_piece, piece[:size], @config.colors[:promoted_kanji], "promoted #{piece[:english]}")
+        end
       end
     end
 
