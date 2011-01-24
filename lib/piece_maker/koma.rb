@@ -1,6 +1,6 @@
 module PieceMaker
   class Koma
-    attr_reader :inner_width, :inner_height, :vertices
+    attr_reader :width, :height
 
     SCALE = 3.3114754098360657
     DIMENSIONS = [
@@ -36,19 +36,23 @@ module PieceMaker
        }
     ]
 
-    def initialize(size, width, height)
+    def initialize(size, square_width, square_height)
       @index = size - 1
       @size = size
-      @width = width
-      @height = height
+      
+      @square_width = square_width
+      @square_height = square_height
+      
+      @width = (DIMENSIONS[@index][:width] / SCALE) * @square_width
+      @height = (DIMENSIONS[@index][:height] / SCALE) * @square_width
     end
 
     def inner_width
-      @inner_width ||= (DIMENSIONS[@index][:width] / SCALE) * @width
+      @inner_width ||= self.vertices[6] - self.vertices[2]
     end
     
     def inner_height
-      @inner_height ||= (DIMENSIONS[@index][:height] / SCALE) * @width
+      @inner_height ||= self.vertices[1] - self.vertices[3]
     end
 
     def vertices
@@ -80,18 +84,16 @@ module PieceMaker
 
       @vertices ||= 
         begin
-          width = (DIMENSIONS[@index][:width] / SCALE) * @width
-          height = (DIMENSIONS[@index][:height] / SCALE) * @width
-          major_side_length = (DIMENSIONS[@index][:major_side_length] / SCALE) * @width
-          minor_side_length = (DIMENSIONS[@index][:minor_side_length] / SCALE) * @width
+          major_side_length = (DIMENSIONS[@index][:major_side_length] / SCALE) * @square_width
+          minor_side_length = (DIMENSIONS[@index][:minor_side_length] / SCALE) * @square_width
           major_side_angle = DIMENSIONS[@index][:major_side_angle]
           minor_side_angle = DIMENSIONS[@index][:minor_side_angle]
 
           vertices = [0]*8
-          vertices[0] = ((@width - width)/2).to_i
-          vertices[1] = ((@height + height)/2).to_i
+          vertices[0] = ((@square_width - @width)/2).to_i
+          vertices[1] = ((@square_height + @height)/2).to_i
 
-          vertices[8] = ((@width + width)/2).to_i
+          vertices[8] = ((@square_width + @width)/2).to_i
           vertices[9] = vertices[1]
     
           vertices[2] = (vertices[0] + major_side_length * Math.cos(major_side_angle)).to_i
