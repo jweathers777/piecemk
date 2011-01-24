@@ -1,5 +1,6 @@
 ---
 :games:
+  - torishogi
   - shogi
   - chushogi
 :font: '/System/Library/Fonts/儷黑 Pro.ttf'
@@ -9,6 +10,7 @@
   :border: black
   :koma: rgb(229,194,117)
   :kanji: black
+  :marker: rgb(198,33,57)
   :promoted_kanji: rgb(198,33,57)
 
 :dimensions:

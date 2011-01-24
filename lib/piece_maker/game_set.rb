@@ -37,12 +37,37 @@ module PieceMaker
 
       koma = Koma.new(size, @@config.square_width, @@config.square_height)
       draw_koma(image, koma)
+
+      kanji_width = koma.inner_width
+      kanji_height = koma.inner_height
       
-      inner_square = Image.new(koma.inner_width, koma.inner_height) {
+      inner_square = Image.new(kanji_width, kanji_height) {
         self.background_color = 'none'
       }
+      
+      y = 0
+      if piece[:marker]
+        kanji_height = koma.inner_height/1.75
+        y = -1*kanji_height/5
+        
+        marker_square = Image.new(kanji_width, kanji_height) {
+          self.background_color = 'none'
+        }
+        
+        kanji = piece[:marker]
+        draw_kanji(marker_square, kanji, @@config.colors[:marker])
+        inner_square.composite!(marker_square, NorthGravity, 0, y, OverCompositeOp)
+
+        kanji_height = koma.inner_height
+      end
+
+      kanji_square = Image.new(kanji_width, kanji_height) {
+        self.background_color = 'none'
+      }
+      
       kanji = piece[:kanji].split(//).join("\n")
-      draw_kanji(inner_square, kanji, kanji_color)
+      draw_kanji(kanji_square, kanji, kanji_color)
+      inner_square.composite!(kanji_square, SouthGravity, 0, y, OverCompositeOp)
 
       image.composite!(inner_square, CenterGravity, OverCompositeOp)
 

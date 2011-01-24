@@ -1,0 +1,79 @@
+--- 
+:name: Tori Shogi
+:dimensions: 
+- 7
+- 7
+:zone-markers:
+- - 3
+  - 3
+- - 6
+  - 3
+- - 3
+  - 6
+- - 6
+  - 6
+:pieces: 
+- :english: phoenix
+  :japanese: ootori
+  :kanji: 鵬
+  :notation: Ph
+  :promotion: 
+  :size: 6
+- :english: crane
+  :japanese: tsuru
+  :kanji: 鶴
+  :notation: Cr
+  :promotion: 
+  :size: 4
+- :english: pheasant
+  :japanese: kiji
+  :kanji: 雉
+  :notation: Pt
+  :promotion: 
+  :size: 3
+- :english: quail (left)
+  :japanese: uzura
+  :kanji: 鶉
+  :marker: 左
+  :notation: LQ
+  :promotion: 
+  :size: 2
+- :english: quail (right)
+  :japanese: uzura
+  :kanji: 鶉
+  :marker: 右
+  :notation: RQ
+  :promotion: 
+  :size: 2
+- :english: falcon
+  :japanese: taka
+  :kanji: 鷹
+  :notation: Fa
+  :promotion: mountain hawk eagle 
+  :size: 5
+- :english: mountain hawk eagle
+  :japanese: kumataka
+  :kanji: 鵰
+  :notation: +Fa
+  :promotion: 
+  :size: 5
+- :english: swallow
+  :japanese: tsubame
+  :kanji: 燕
+  :notation: Sw
+  :promotion: wild goose 
+  :size: 1
+- :english: wild goose
+  :japanese: kari
+  :kanji: 鴈
+  :notation: +Sw
+  :promotion: 
+  :size: 1
+:setup:
+   - "RQ,Pt,Cr,Ph,Cr,Pt,LQ"
+   - "  ,  ,  ,Fa,  ,  ,  "
+   - "Sw,Sw,Sw,Sw,Sw,Sw,Sw"
+   - "  ,  ,Sw,  ,Sw,  ,  "
+   - "Sw,Sw,Sw,Sw,Sw,Sw,Sw"
+   - "  ,  ,  ,Fa,  ,  ,  "
+   - "LQ,Pt,Cr,Ph,Cr,Pt,RQ"
