@@ -38,8 +38,13 @@ module PieceMaker
       koma = Koma.new(size, @@config.square_width, @@config.square_height)
       draw_koma(image, koma)
       
+      inner_square = Image.new(koma.inner_width, koma.inner_height) {
+        self.background_color = 'none'
+      }
       kanji = piece[:kanji].split(//).join("\n")
-      draw_kanji(image, koma, kanji, kanji_color)
+      draw_kanji(inner_square, kanji, kanji_color)
+
+      image.composite!(inner_square, CenterGravity, OverCompositeOp)
 
       image.write("png32:"+File.join(@name, "#{file_name}.png"))
     end
@@ -124,18 +129,18 @@ module PieceMaker
       gc.draw(image)
     end
 
-    def draw_kanji(image, koma, kanji, color)
-      pointsize = koma.inner_height/2
+    def draw_kanji(image, kanji, color)
+      pointsize = image.rows/2
       searching = true
       while searching
         @@kanji_gc.pointsize = pointsize
 
         m = @@kanji_gc.get_multiline_type_metrics(kanji)
-        searching = (m.width > koma.inner_width or m.height > koma.inner_height)
+        searching = (m.width > image.columns or m.height > image.rows)
         pointsize -= 1 if searching
       end
 
-      @@kanji_gc.pointsize = pointsize - 2
+      @@kanji_gc.pointsize = pointsize - 1
       @@kanji_gc.annotate(image, 0, 0, 0, 0, kanji) {
         self.fill = color
       }
