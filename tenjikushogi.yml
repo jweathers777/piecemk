@@ -1,0 +1,303 @@
+---
+:name: Tenjiku Shogi
+:dimensions:
+- 16
+- 16
+:zone-markers:
+- - 6 
+  - 6
+- - 12 
+  - 6
+- - 6 
+  - 12
+- - 12
+  - 12
+:pieces:
+- :english: king
+  :japanese: gyokushō
+  :kanji: 玉将
+  :notation: K
+  :promotion: 
+  :size: 6
+- :english: jewel
+  :japanese: ōshō
+  :kanji: 王将
+  :notation: K
+  :promotion: 
+  :size: 6
+- :english: drunk elephant
+  :japanese: suizō
+  :kanji: 酔象
+  :notation: DE
+  :promotion: crown prince
+  :size: 5
+- :english: crown prince
+  :japanese: taishi
+  :kanji: 太子
+  :notation: CP
+  :promotion: 
+  :size: 5
+- :english: gold general
+  :japanese: kinshō
+  :kanji: 金将
+  :notation: G
+  :promotion: rook
+  :size: 4
+- :english: silver general
+  :japanese: ginshō
+  :kanji: 銀将
+  :notation: S
+  :promotion: vertical mover
+  :size: 4
+- :english: copper general
+  :japanese: dōshō
+  :kanji: 銅将
+  :notation: C
+  :promotion: side mover
+  :size: 4
+- :english: iron general
+  :japanese: tesshō
+  :kanji: 鉄将
+  :notation: I
+  :promotion: vertical soldier
+  :size: 4
+- :english: ferocious leopard
+  :japanese: mōhyō
+  :kanji: 猛豹
+  :notation: FL
+  :promotion: bishop
+  :size: 3
+- :english: knight
+  :japanese: keima
+  :kanji: 桂馬
+  :notation: N
+  :promotion: side soldier
+  :size: 3
+- :english: lance
+  :japanese: kyōsha
+  :kanji: 香車
+  :notation: L
+  :promotion: white horse
+  :size: 2
+- :english: white horse
+  :japanese: hokku
+  :kanji: 白駒
+  :notation: WH
+  :promotion: 
+  :size: 2
+- :english: lion
+  :japanese: shishi
+  :kanji: 獅子
+  :notation: Ln
+  :promotion: lion hawk
+  :size: 4
+- :english: free king
+  :japanese: honnō
+  :kanji: 奔王
+  :notation: FK
+  :promotion: free eagle
+  :size: 4
+- :english: kirin
+  :japanese: kirin
+  :kanji: 麒麟
+  :notation: Kr
+  :promotion: lion
+  :size: 5
+- :english: phoenix
+  :japanese: hōō
+  :kanji: 鳳凰
+  :notation: Ph
+  :promotion: free king
+  :size: 5
+- :english: blind tiger
+  :japanese: mōko
+  :kanji: 盲虎
+  :notation: BT
+  :promotion: flying stag
+  :size: 3
+- :english: flying stag
+  :japanese: hiroku
+  :kanji: 飛鹿
+  :notation: FS
+  :promotion: 
+  :size: 3
+- :english: chariot soldier
+  :japanese: shahei
+  :kanji: 車兵
+  :notation: CS
+  :promotion: heavenly tetrarch
+  :size: 4
+- :english: heavenly tetrarch
+  :japanese: shitennō
+  :kanji: 四天王
+  :notation: HT
+  :promotion: 
+  :size: 4
+- :english: reverse chariot
+  :japanese: hensha
+  :kanji: 反車
+  :notation: RC
+  :promotion: whale
+  :size: 2
+- :english: whale
+  :japanese: keigei
+  :kanji: 鯨鯢
+  :notation: W
+  :promotion: 
+  :size: 2
+- :english: lion hawk
+  :japanese: shiō, shitaka
+  :kanji: 獅鷹
+  :notation: LH
+  :promotion: 
+  :size: 4
+- :english: free eagle
+  :japanese: honjū
+  :kanji: 奔鷲
+  :notation: FE
+  :promotion: 
+  :size: 6
+- :english: fire demon
+  :japanese: kaki
+  :kanji: 火鬼
+  :notation: FD
+  :promotion: 
+  :size: 4
+- :english: water buffalo
+  :japanese: suigyū
+  :kanji: 水牛
+  :notation: WB
+  :promotion: fire demon
+  :size: 3
+- :english: dragon horse
+  :japanese: ryūme
+  :kanji: 龍馬
+  :notation: DH
+  :promotion: horned falcon
+  :size: 5
+- :english: dragon king
+  :japanese: ryūō
+  :kanji: 龍王
+  :notation: DK
+  :promotion: soaring eagle
+  :size: 5
+- :english: bishop
+  :japanese: kakugyō
+  :kanji: 角行
+  :notation: B
+  :promotion: dragon horse
+  :size: 4
+- :english: vertical soldier
+  :japanese: shuhei
+  :kanji: 竪兵
+  :notation: VS
+  :promotion: chariot soldier
+  :size: 4
+- :english: side soldier
+  :japanese: ōhei
+  :kanji: 横兵
+  :notation: SS
+  :promotion: water buffalo
+  :size: 4
+- :english: great general
+  :japanese: taishō
+  :kanji: 大将
+  :notation: GG
+  :promotion: 
+  :size: 4
+- :english: vice general
+  :japanese: fukushō
+  :kanji: 副将
+  :notation: VG
+  :promotion: 
+  :size: 4
+- :english: rook general
+  :japanese: hishō
+  :kanji: 飛将
+  :notation: RG
+  :promotion: great general
+  :size: 5
+- :english: bishop general
+  :japanese: kakushō
+  :kanji: 角将
+  :notation: BG
+  :promotion: vice general
+  :size: 5
+- :english: soaring eagle
+  :japanese: hijū
+  :kanji: 飛鷲
+  :notation: SE
+  :promotion: rook general
+  :size: 4
+- :english: horned falcon
+  :japanese: kakuō
+  :kanji: 角鷹
+  :notation: HF
+  :promotion: bishop general
+  :size: 4
+- :english: rook
+  :japanese: hisha
+  :kanji: 飛車
+  :notation: R
+  :promotion: dragon king
+  :size: 4
+- :english: vertical mover
+  :japanese: shugyō
+  :kanji: 竪行
+  :notation: VM
+  :promotion: flying ox
+  :size: 2
+- :english: flying ox
+  :japanese: higyū
+  :kanji: 飛牛
+  :notation: FO
+  :promotion: 
+  :size: 2
+- :english: side mover
+  :japanese: ōgyō
+  :kanji: 横行
+  :notation: SM
+  :promotion: free boar
+  :size: 2
+- :english: free boar
+  :japanese: honcho
+  :kanji: 奔猪
+  :notation: FB
+  :promotion: 
+  :size: 2
+- :english: pawn
+  :japanese: fuhyō
+  :kanji: 歩兵
+  :notation: P
+  :promotion: gold general
+  :size: 1
+- :english: dog
+  :japanese: inu
+  :kanji: 犬
+  :notation: D
+  :promotion: multi general
+  :size: 1
+- :english: multi general
+  :japanese: suishō
+  :kanji: 雜将
+  :notation: MG
+  :promotion: 
+  :size: 1
+:setup:
+   - " L, N,FL, I, C, S, G,DE, K, G, S, C, I,FL, N, L"
+   - "RC,  ,CS,CS,  ,BT,Ph,FK,Ln,Kr,BT,  ,CS,CS,  ,RC"
+   - "SS,VS, B,DH,DK,WB,FD,FE,LH,FD,WB,DK,DH, B,VS,SS"
+   - "SM,VM, R,HF,SE,BG,RG,VG,GG,RG,BG,SE,HF, R,VM,SM"
+   - " P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P"
+   - "  ,  ,  ,  , D,  ,  ,  ,  ,  ,  , D,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  , D,  ,  ,  ,  ,  ,  , D,  ,  ,  ,  "
+   - " P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P"
+   - "SM,VM, R,HF,SE,BG,RG,GG,VG,RG,BG,SE,HF, R,VM,SM"
+   - "SS,VS, B,DH,DK,WB,FD,LH,FE,FD,WB,DK,DH, B,VS,SS"
+   - "RC,  ,CS,CS,  ,BT,Kr,Ln,FK,Ph,BT,  ,CS,CS,  ,RC"
+   - " L, N,FL, I, C, S, G, K,DE, G, S, C, I,FL, N, L"
+
