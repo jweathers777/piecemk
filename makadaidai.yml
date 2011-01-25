@@ -1,0 +1,497 @@
+---
+:name: Maka-Dai-Dai Shogi
+:dimensions:
+- 19
+- 19
+:zone-markers:
+- - 7 
+  - 7
+- - 14 
+  - 7
+- - 7 
+  - 14
+- - 14
+  - 14
+:pieces:
+- :english: king
+  :japanese: gyokushō
+  :kanji: 玉将
+  :notation: K
+  :promotion: emperor
+  :size: 6
+- :english: jewel
+  :japanese: gyokushō
+  :kanji: 玉将
+  :notation: K
+  :promotion: emperor
+  :size: 6
+- :english: emperor
+  :japanese: jizai tennō
+  :kanji: 自在天王
+  :notation: Em
+  :promotion: 
+  :size: 6
+- :english: deva
+  :japanese: daiba
+  :kanji: 提婆
+  :notation: Dv
+  :promotion: teaching king
+  :size: 5
+- :english: teaching king
+  :japanese: kyōō
+  :kanji: 教王
+  :notation: TK
+  :promotion: 
+  :size: 5
+- :english: dark spirit
+  :japanese: mumyō
+  :kanji: 無明
+  :notation: DS
+  :promotion: buddhist spirit
+  :size: 5
+- :english: buddhist spirit
+  :japanese: hōsei
+  :kanji: 法性
+  :notation: BS
+  :promotion: 
+  :size: 5
+- :english: gold general
+  :japanese: kinshō
+  :kanji: 金将
+  :notation: G
+  :promotion: free gold
+  :size: 4
+- :english: free gold
+  :japanese: honkin
+  :kanji: 奔金
+  :notation: FG
+  :promotion: 
+  :size: 4
+- :english: silver general
+  :japanese: ginshō
+  :kanji: 銀将
+  :notation: S
+  :promotion: free silver
+  :size: 4
+- :english: free silver
+  :japanese: hongin
+  :kanji: 奔銀
+  :notation: FS
+  :promotion: 
+  :size: 4
+- :english: copper general
+  :japanese: dōshō
+  :kanji: 銅将
+  :notation: C
+  :promotion: free copper
+  :size: 4
+- :english: free copper
+  :japanese: hondō
+  :kanji: 奔銅
+  :notation: FC
+  :promotion: 
+  :size: 4
+- :english: iron general
+  :japanese: tesshō
+  :kanji: 鉄将
+  :notation: I
+  :promotion: free iron
+  :size: 4
+- :english: free iron
+  :japanese: hontetsu
+  :kanji: 奔鉄
+  :notation: FI
+  :promotion: 
+  :size: 4
+- :english: tile general
+  :japanese: gashō
+  :kanji: 瓦将
+  :notation: T
+  :promotion: free tile
+  :size: 4
+- :english: free tile
+  :japanese: honga
+  :kanji: 奔瓦
+  :notation: FT
+  :promotion: 
+  :size: 4
+- :english: stone general
+  :japanese: sekishō
+  :kanji: 石将
+  :notation: St
+  :promotion: free stone
+  :size: 4
+- :english: free stone
+  :japanese: honseki
+  :kanji: 奔石
+  :notation: FSt
+  :promotion: 
+  :size: 4
+- :english: earth general
+  :japanese: doshō
+  :kanji: 土将
+  :notation: E
+  :promotion: free earth
+  :size: 4
+- :english: free earth
+  :japanese: hondo
+  :kanji: 奔土
+  :notation: FE
+  :promotion: 
+  :size: 4
+- :english: lance
+  :japanese: kyōsha
+  :kanji: 香車
+  :notation: L
+  :promotion: gold general
+  :size: 2
+- :english: drunken elephant
+  :japanese: suizō
+  :kanji: 酔象
+  :notation: DE
+  :promotion: prince
+  :size: 5
+- :english: prince
+  :japanese: ōji
+  :kanji: 王子
+  :notation: Pr
+  :promotion: 
+  :size: 5
+- :english: blind tiger
+  :japanese: mōko
+  :kanji: 盲虎
+  :notation: BT
+  :promotion: free tiger
+  :size: 3
+- :english: free tiger
+  :japanese: honko
+  :kanji: 奔虎
+  :notation: FTi
+  :promotion: 
+  :size: 3
+- :english: ferocious leopard
+  :japanese: mōhyō
+  :kanji: 猛豹
+  :notation: FL
+  :promotion: free leopard
+  :size: 3
+- :english: free leopard
+  :japanese: honpyō
+  :kanji: 奔豹
+  :notation: FLe
+  :promotion: 
+  :size: 3
+- :english: coiled serpent
+  :japanese: banja
+  :kanji: 蟠蛇
+  :notation: Co
+  :promotion: free serpent
+  :size: 3
+- :english: free serpent
+  :japanese: honja
+  :kanji: 奔蛇
+  :notation: FSe
+  :promotion: 
+  :size: 3
+- :english: reclining dragon
+  :japanese: garyū
+  :kanji: 臥龍
+  :notation: RD
+  :promotion: free dragon
+  :size: 3
+- :english: free dragon
+  :japanese: honryū
+  :kanji: 奔龍
+  :notation: FDr
+  :promotion: 
+  :size: 3
+- :english: chinese cock
+  :japanese: waikei
+  :kanji: 淮鶏
+  :notation: CC
+  :promotion: wizard stork
+  :size: 3
+- :english: wizard stork
+  :japanese: senkaku
+  :kanji: 仙鶴
+  :notation: WS
+  :promotion: 
+  :size: 3
+- :english: old monkey
+  :japanese: koen
+  :kanji: 古猿
+  :notation: OM
+  :promotion: mountain witch
+  :size: 3
+- :english: mountain witch
+  :japanese: sambo
+  :kanji: 山母
+  :notation: MW
+  :promotion: 
+  :size: 3
+- :english: cat sword
+  :japanese: myōjin
+  :kanji: 猫刄
+  :notation: CS
+  :promotion: free cat
+  :size: 2
+- :english: free cat
+  :japanese: honmyō
+  :kanji: 奔猫
+  :notation: FCa
+  :promotion: 
+  :size: 2
+- :english: reverse chariot
+  :japanese: hensha
+  :kanji: 反車
+  :notation: RV
+  :promotion: gold general
+  :size: 2
+- :english: lion
+  :japanese: shishi
+  :kanji: 獅子
+  :notation: Ln
+  :promotion: furious fiend
+  :size: 4
+- :english: furious fiend
+  :japanese: funshin
+  :kanji: 奮迅
+  :notation: FF
+  :promotion: 
+  :size: 4
+- :english: kirin
+  :japanese: kirin
+  :kanji: 麒麟
+  :notation: Kr
+  :promotion: great dragon
+  :size: 5
+- :english: great dragon
+  :japanese: dairyū
+  :kanji: 大龍
+  :notation: GD
+  :promotion: 
+  :size: 5
+- :english: phoenix
+  :japanese: hōō
+  :kanji: 鳳凰
+  :notation: Ph
+  :promotion: golden bird
+  :size: 5
+- :english: golden bird
+  :japanese: kinshi
+  :kanji: 金翅
+  :notation: GBi
+  :promotion: 
+  :size: 5
+- :english: evil wolf
+  :japanese: akurō
+  :kanji: 悪狼
+  :notation: EW
+  :promotion: free wolf
+  :size: 3
+- :english: free wolf
+  :japanese: honrō
+  :kanji: 奔狼
+  :notation: FW
+  :promotion: 
+  :size: 3
+- :english: blind bear
+  :japanese: mōyū
+  :kanji: 盲熊
+  :notation: BB
+  :promotion: free bear
+  :size: 3 
+- :english: free bear
+  :japanese: honyū
+  :kanji: 奔熊
+  :notation: FBe
+  :promotion: 
+  :size: 3
+- :english: angry boar
+  :japanese: shincho
+  :kanji: 嗔猪
+  :notation: AB
+  :promotion: free boar
+  :size: 3
+- :english: free boar
+  :japanese: honcho
+  :kanji: 奔猪
+  :notation: FBo
+  :promotion: 
+  :size: 3
+- :english: old rat
+  :japanese: rōso
+  :kanji: 老鼠
+  :notation: OR
+  :promotion: bat
+  :size: 3
+- :english: bat
+  :japanese: kōmori
+  :kanji: 蝙蝠
+  :notation: Ba
+  :promotion: 
+  :size: 3
+- :english: lion dog
+  :japanese: komainu
+  :kanji: 狛犬
+  :notation: LD
+  :promotion: gold general
+  :size: 4
+- :english: wrestler
+  :japanese: rikishi
+  :kanji: 力士
+  :notation: W
+  :promotion: gold general
+  :size: 5
+- :english: guardian of the gods
+  :japanese: kongō
+  :kanji: 金剛
+  :notation: GG
+  :promotion: gold general
+  :size: 5
+- :english: buddhist devil
+  :japanese: rasetsu
+  :kanji: 羅刹
+  :notation: BD
+  :promotion: gold general
+  :size: 3
+- :english: she-devil
+  :japanese: yasha
+  :kanji: 夜叉
+  :notation: SD
+  :promotion: gold general
+  :size: 3
+- :english: flying dragon
+  :japanese: hiryū
+  :kanji: 飛龍
+  :notation: FD
+  :promotion: gold general
+  :size: 4
+- :english: violent ox
+  :japanese: mōgyū
+  :kanji: 猛牛
+  :notation: VO
+  :promotion: gold general
+  :size: 3
+- :english: knight
+  :japanese: keima
+  :kanji: 桂馬
+  :notation: N
+  :promotion: gold general
+  :size: 3
+- :english: donkey
+  :japanese: roba
+  :kanji: 驢馬
+  :notation: Dn
+  :promotion: gold general
+  :size: 2
+- :english: free king
+  :japanese: hōnnō
+  :kanji: 奔王
+  :notation: FK
+  :promotion: 
+  :size: 4
+- :english: capricorn
+  :japanese: makatsu
+  :kanji: 摩羯
+  :notation: Ca
+  :promotion: gold general
+  :size: 5
+- :english: hook mover
+  :japanese: kōgyō
+  :kanji: 鉤行
+  :notation: HM
+  :promotion: gold general
+  :size: 5
+- :english: dragon king
+  :japanese: ryūō
+  :kanji: 龍王
+  :notation: DK
+  :promotion: 
+  :size: 5
+- :english: dragon horse
+  :japanese: ryūme
+  :kanji: 龍馬
+  :notation: DH
+  :promotion: 
+  :size: 5
+- :english: bishop
+  :japanese: kakugyō
+  :kanji: 角行
+  :notation: B
+  :promotion: gold general
+  :size: 4
+- :english: vertical mover
+  :japanese: shugyō
+  :kanji: 竪行
+  :notation: VM
+  :promotion: gold general
+  :size: 2
+- :english: side flier
+  :japanese: ōhi
+  :kanji: 横飛
+  :notation: SF
+  :promotion: gold general
+  :size: 2
+- :english: side mover
+  :japanese: ōgyō
+  :kanji: 横行
+  :notation: SM
+  :promotion: gold general
+  :size: 2
+- :english: left chariot
+  :japanese: sasha
+  :kanji: 左車
+  :notation: LC
+  :promotion: gold general
+  :size: 2
+- :english: right chariot
+  :japanese: usha
+  :kanji: 右車
+  :notation: RC
+  :promotion: gold general
+  :size: 2
+- :english: rook
+  :japanese: hisha
+  :kanji: 飛車
+  :notation: R
+  :promotion: gold general
+  :size: 4
+- :english: pawn
+  :japanese: fuhyō
+  :kanji: 歩兵
+  :notation: P
+  :promotion: gold general
+  :size: 1
+- :english: go between
+  :japanese: chūnin
+  :kanji: 仲人
+  :notation: GB
+  :promotion: free goer
+  :size: 1
+- :english: free goer
+  :japanese: honnin
+  :kanji: 奔人
+  :notation: FGo
+  :promotion: 
+  :size: 1
+:setup:
+   - " L, E,St, T, I, C, S, G,DS, K,Dv, G, S, C, I, T,St, E, L"
+   - "RV,  ,CS,  ,OM,  ,RD,FL,BT,DE,BT,FL,Co,  ,CC,  ,CS,  ,RV"
+   - "  ,OR,  ,AB,  ,BB,  ,EW,Ph,Ln,Kr,EW,  ,BB,  ,AB,  ,OR,  "
+   - "Dn,  , N,  ,VO,  ,FD,SD,GG,LD, W,BD,FD,  ,VO,  , N,  ,Dn"
+   - " R,RC,SM,SF,VM, B,DH,DK,HM,FK,Ca,DK,DH, B,VM,SF,SM,LC, R"
+   - " P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P"
+   - "  ,  ,  ,  ,  ,GB,  ,  ,  ,  ,  ,  ,  ,GB,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  "
+   - "  ,  ,  ,  ,  ,GB,  ,  ,  ,  ,  ,  ,  ,GB,  ,  ,  ,  ,  "
+   - " P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P, P"
+   - " R,LC,SM,SF,VM, B,DH,DK,Ca,FK,HM,DK,DH, B,VM,SF,SM,RC, R"
+   - "Dn,  , N,  ,VO,  ,FD,BD, W,LD,GG,SD,FD,  ,VO,  , N,  ,Dn"
+   - "  ,OR,  ,AB,  ,BB,  ,EW,Kr,Ln,Ph,EW,  ,BB,  ,AB,  ,OR,  "
+   - "RV,  ,CS,  ,CC,  ,Co,FL,BT,DE,BT,FL,RD,  ,OM,  ,CS,  ,RV"
+   - " L, E,St, T, I, C, S, G,Dv, K,DS, G, S, C, I, T,St, E, L"
