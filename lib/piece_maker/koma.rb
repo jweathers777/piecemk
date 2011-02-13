@@ -1,14 +1,14 @@
 module PieceMaker
   class Koma
-    attr_reader :width, :height
+    attr_reader :width, :height, :inner_width, :inner_height, :top_height
     #
     #               O = (0,0)
     #  O________________________________   
-    #  |               inner width      |    ^
-    #  |                    |           |    |
-    #  |                    |           |    |
-    #  |               P2   |           |    |
-    #  |               |    V           |    |
+    #  |          inner width           |    ^
+    #  |        <-------------->        |    |
+    #  |                                |    |
+    #  |               P2               |    |
+    #  |               |                |    |
     #  |       P1------|-------P3       |    |
     #  |               |       |        |    |
     #  |               |       |        |    |
@@ -20,7 +20,7 @@ module PieceMaker
     #  |               |       |        |    |
     #  |   P0          |       |   P4   |    |
     #  |   <---------width---------->   |    |
-    #  |                                |    |
+    #  |            edge width <---->   |    |
     #  |________________________________|    v
     #                                  
     #  <---------square-width----------->                                  
@@ -31,50 +31,33 @@ module PieceMaker
     #  theta = Angle P1-P0-P4
     #  phi = Angle P2-P1-P3
 
-    SCALE = 33.918181818181814
+    SCALE = 2.6
     DIMENSIONS = [
        {
-         :width => 22.5, :height => 27.0, 
-         :major_side_length => 22.5, :theta => 1.413716694115407, 
-         :minor_side_length => 9.087145770278516, :phi => 2.082703807444008
+         :width => 1.76, :height => 2.17, :major_side_length => 1.74, 
+         :theta => 81.50, :phi => 122.13
        },
        {
-         :width => 23.5, :height => 28.0, 
-         :major_side_length => 23.5, :theta => 1.413716694115407, 
-         :minor_side_length => 9.387422993470103, :phi => 2.082703807444008
+         :width => 1.84, :height => 2.24, :major_side_length => 1.82, 
+         :theta => 81.50, :phi => 122.13
        },
        {
-         :width => 25.5, :height => 29.0, 
-         :major_side_length => 25.5, :theta => 1.413716694115407, 
-         :minor_side_length => 9.555099861716837, :phi => 2.082703807444008
+         :width => 2.00, :height => 2.33, :major_side_length => 1.98, 
+         :theta => 81.50, :phi => 122.13
        },
        {
-         :width => 26.7, :height => 30.0, 
-         :major_side_length => 26.7, :theta => 1.413716694115407, 
-         :minor_side_length => 9.864847316814341, :phi => 2.082703807444008
+         :width => 2.09, :height => 2.41, :major_side_length => 2.07, 
+         :theta => 81.50, :phi => 122.13
        },
        {
-         :width => 27.7, :height => 31.0, 
-         :major_side_length => 27.7, :theta => 1.413716694115407, 
-         :minor_side_length => 10.189501615937441, :phi => 2.082703807444008
+         :width => 2.17, :height => 2.49, :major_side_length => 2.15, 
+         :theta => 81.50, :phi => 122.13
        },
        {
-         :width => 28.7, :height => 32.0, 
-         :major_side_length => 28.7, :theta => 1.413716694115407, 
-         :minor_side_length => 10.515372151562836, :phi => 2.082703807444008
+         :width => 2.25, :height => 2.57, :major_side_length => 2.23, 
+         :theta => 81.50, :phi => 122.13
        }
     ]
-
-    def self.calculate_minor_side_length(width, height, theta)
-      edge_width = width*Math.cos(theta)
-      inner_height = width*Math.sin(theta)
-
-      inner_width = width - 2*edge_width
-      top_height = height - inner_height
-      top_half_width = inner_width/2
-
-      Math.sqrt(top_height**2 + top_half_width**2)
-    end
 
     def initialize(size, square_width, square_height)
       @index = size - 1
@@ -82,42 +65,46 @@ module PieceMaker
       
       @square_width = square_width
       @square_height = square_height
-      
+
       @width = (DIMENSIONS[@index][:width] / SCALE) * @square_width
       @height = (DIMENSIONS[@index][:height] / SCALE) * @square_width
+
+      @major_side_length = (DIMENSIONS[@index][:major_side_length] / SCALE) * @square_width
+      @theta = DIMENSIONS[@index][:theta]*Math::PI/180.0
+      @phi = DIMENSIONS[@index][:phi]*Math::PI/180.0
+      @alpha = @theta + @phi + Math::PI
+
+      @edge_width = (@major_side_length * Math.cos(@theta)).to_i
+
+      @inner_width = @width - 2*@edge_width
+      @inner_height = (@major_side_length * Math.sin(@theta)).to_i
+      @top_height = (0.5*@inner_width*Math.tan(@alpha)).to_i
     end
 
-    def inner_width
-      @inner_width ||= self.vertices[6] - self.vertices[2]
-    end
-    
-    def inner_height
-      @inner_height ||= self.vertices[1] - self.vertices[3]
-    end
 
     def vertices
       @vertices ||= 
         begin
-          major_side_length = (DIMENSIONS[@index][:major_side_length] / SCALE) * @square_width
-          minor_side_length = (DIMENSIONS[@index][:minor_side_length] / SCALE) * @square_width
-          theta = DIMENSIONS[@index][:theta]
-          phi = DIMENSIONS[@index][:phi]
-
           vertices = [0]*8
+          #P0
           vertices[0] = ((@square_width - @width)/2).to_i
           vertices[1] = ((@square_height + @height)/2).to_i
 
+          #P4
           vertices[8] = ((@square_width + @width)/2).to_i
           vertices[9] = vertices[1]
     
-          vertices[2] = (vertices[0] + major_side_length * Math.cos(theta)).to_i
-          vertices[3] = (vertices[1] - major_side_length * Math.sin(theta)).to_i
+          #P1
+          vertices[2] = vertices[0] + @edge_width 
+          vertices[3] = vertices[1] - @inner_height
           
-          vertices[6] = (vertices[8] - major_side_length * Math.cos(theta)).to_i
+          #P3
+          vertices[6] = vertices[8] - @edge_width 
           vertices[7] = vertices[3]
 
-          vertices[4] = (0.5*vertices[0] + 0.5*vertices[8]).to_i
-          vertices[5] = (vertices[3] - minor_side_length*Math.sin(phi)).to_i
+          #P2
+          vertices[4] = ((vertices[0] + vertices[8])/2).to_i
+          vertices[5] = vertices[3] - @top_height
 
           vertices
         end

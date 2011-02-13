@@ -38,38 +38,34 @@ module PieceMaker
       koma = Koma.new(size, @@config.square_width, @@config.square_height)
       draw_koma(image, koma)
 
-      kanji_width = koma.inner_width
-      kanji_height = koma.inner_height
-      
-      inner_square = Image.new(kanji_width, kanji_height) {
+      inner_square = Image.new(koma.inner_width, koma.inner_height) {
         self.background_color = 'none'
       }
       
-      y = 0
+      kanji = piece[:kanji].split(//).join("\n")
+      draw_kanji(inner_square, kanji, kanji_color)
+
+      x = koma.vertices[2]
+      y = koma.vertices[3]
+      image.composite!(inner_square, NorthWestGravity, x, y, OverCompositeOp)
+      
       if piece[:marker]
-        kanji_height = koma.inner_height/1.75
-        y = -1*kanji_height/5
+        m = @@kanji_gc.get_multiline_type_metrics(kanji)
+        marker_width = m.width
+        marker_height = m.height
+
+        x += (koma.inner_width - m.width)/2
+        y -= koma.top_height
         
-        marker_square = Image.new(kanji_width, kanji_height) {
+        marker_square = Image.new(marker_width, marker_height) {
           self.background_color = 'none'
         }
         
         kanji = piece[:marker]
         draw_kanji(marker_square, kanji, @@config.colors[:marker])
-        inner_square.composite!(marker_square, NorthGravity, 0, y, OverCompositeOp)
-
-        kanji_height = koma.inner_height
+        image.composite!(marker_square, NorthWestGravity, x, y, OverCompositeOp)
       end
 
-      kanji_square = Image.new(kanji_width, kanji_height) {
-        self.background_color = 'none'
-      }
-      
-      kanji = piece[:kanji].split(//).join("\n")
-      draw_kanji(kanji_square, kanji, kanji_color)
-      inner_square.composite!(kanji_square, SouthGravity, 0, y, OverCompositeOp)
-
-      image.composite!(inner_square, CenterGravity, OverCompositeOp)
 
       image.write("png32:"+File.join(@name, "#{file_name}.png"))
     end
